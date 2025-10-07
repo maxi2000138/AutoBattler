@@ -1,6 +1,6 @@
 ﻿namespace Scenes.App.Scripts.Gameplay.Units
 {
-  public class Unit
+  public class Unit : IUnit
   {
     
   }

@@ -1,7 +1,10 @@
 ﻿namespace Scenes.App.Scripts.Gameplay.Units
 {
-  public class UnitType
+  public enum UnitType
   {
+    None,
     
+    Player,
+    Enemy,
   }
 }
