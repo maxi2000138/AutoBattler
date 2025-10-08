@@ -53,6 +53,9 @@ MonoBehaviour:
     - Name: $v
       Entry: 7
       Data: 2|Scenes.App.Scripts.Gameplay.Units.Config.PlayerData, Assembly-CSharp
+    - Name: HealthByLevel
+      Entry: 3
+      Data: 3
     - Name: Prefab
       Entry: 10
       Data: 0
@@ -88,6 +91,24 @@ MonoBehaviour:
     - Name: $v
       Entry: 7
       Data: 4|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
+    - Name: Stats
+      Entry: 7
+      Data: 5|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
+    - Name: Strength
+      Entry: 3
+      Data: 3
+    - Name: Agility
+      Entry: 3
+      Data: 3
+    - Name: Endurance
+      Entry: 3
+      Data: 3
+    - Name: Health
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: Prefab
       Entry: 10
       Data: 1

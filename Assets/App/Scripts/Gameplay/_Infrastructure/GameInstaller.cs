@@ -1,4 +1,5 @@
 ﻿using System;
+using App.Scripts.Gameplay.Stats;
 using Scenes.App.Scripts.Gameplay.Battle;
 using Scenes.App.Scripts.Gameplay.Factory;
 using Scenes.App.Scripts.Gameplay.UnitRegistryImpl;
@@ -20,6 +21,7 @@ namespace Scenes.App.Scripts.Gameplay._Infrastructure
       Container.BindInterfacesAndSelfTo<BattleConductor>().AsSingle();
       Container.Bind<IUnitRegistry>().To<UnitRegistry>().AsSingle();
       Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
+      Container.Bind<IStatsFactory>().To<StatsFactory>().AsSingle();
 
       Container.BindInterfacesTo<EntryPoint>().AsSingle();
     }

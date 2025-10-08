@@ -1,7 +1,12 @@
-﻿namespace Scenes.App.Scripts.Gameplay.Units
+﻿
+using System;
+using App.Scripts.Gameplay.Stats;
+
+namespace Scenes.App.Scripts.Gameplay.Units
 {
-  public interface IUnit
+  public interface IUnit : IDisposable
   {
-    
+    Stats Stats { get; }
+    UnitView View { get; }
   }
 }

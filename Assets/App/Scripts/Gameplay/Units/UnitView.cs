@@ -1,21 +1,21 @@
-﻿using App.Scripts.Gameplay.Units;
+﻿using System.Collections.Generic;
+using App.Scripts.Gameplay.Stats;
+using App.Scripts.Gameplay.Units;
 using App.Scripts.Utils;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Scenes.App.Scripts.Gameplay.Units
 {
-  public class UnitView : MonoBehaviour
+  public class UnitView : SerializedMonoBehaviour
   {
     private const float BackRotation = 181f;
     private const float ForwardRotation = 0f;
 
     [SerializeField] private Animator _animator;
     [SerializeField] private Transform _view;
-      
-    [Header("Bars")]
-    [SerializeField] private UnitBar _healthBar;
-    [SerializeField] private UnitBar _agilityBar;
-    [SerializeField] private UnitBar _strengthBar;
+    [field: SerializeField] public Dictionary<StatType, UnitBar> StatBars { get; private set; }
+    [field: SerializeField] public UnitBar HealthBar { get; private set; }
     
     public void Attack()
     {
