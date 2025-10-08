@@ -1,4 +1,5 @@
-﻿using App.Scripts.Utils;
+﻿using App.Scripts.Gameplay.Units;
+using App.Scripts.Utils;
 using UnityEngine;
 
 namespace Scenes.App.Scripts.Gameplay.Units
@@ -10,7 +11,12 @@ namespace Scenes.App.Scripts.Gameplay.Units
 
     [SerializeField] private Animator _animator;
     [SerializeField] private Transform _view;
-
+      
+    [Header("Bars")]
+    [SerializeField] private UnitBar _healthBar;
+    [SerializeField] private UnitBar _agilityBar;
+    [SerializeField] private UnitBar _strengthBar;
+    
     public void Attack()
     {
       _animator.Play(Animations.Attack);
@@ -19,7 +25,7 @@ namespace Scenes.App.Scripts.Gameplay.Units
     public void RotateTo(Vector2 lookTo)
     {
       float rotationY = lookTo.x < 0f ? BackRotation : ForwardRotation;
-      transform.eulerAngles = new Vector3(transform.eulerAngles.x, rotationY, transform.eulerAngles.z);
+      _view.eulerAngles = new Vector3(transform.eulerAngles.x, rotationY, transform.eulerAngles.z);
     }
   }
 }
