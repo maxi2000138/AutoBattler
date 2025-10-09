@@ -1,6 +1,8 @@
 ﻿using System;
+using App.Scripts.Gameplay;
 using App.Scripts.Gameplay.Stats;
 using App.Scripts.Gameplay.Weapons._Config;
+using App.Scripts.Gameplay.Windows;
 using App.Scripts.Infrastructure.VFX;
 using App.Scripts.Infrastructure.VFX._Config;
 using Scenes.App.Scripts.Gameplay.Battle;
@@ -15,9 +17,13 @@ namespace Scenes.App.Scripts.Gameplay._Infrastructure
 {
   public class GameInstaller : MonoInstaller
   {
+    [Header("Configs")]
     [SerializeField] private UnitsConfig _unitsConfig;
     [SerializeField] private WeaponsConfig _weaponConfig;
     [SerializeField] private VFxConfig _vfxConfig;
+    
+    [Header("Services")]
+    [SerializeField] private WindowRouter _windowRouter;
     
     public override void InstallBindings()
     {
@@ -25,6 +31,7 @@ namespace Scenes.App.Scripts.Gameplay._Infrastructure
       Container.Bind<WeaponsConfig>().FromInstance(_weaponConfig).AsSingle();
       Container.Bind<VFxConfig>().FromInstance(_vfxConfig).AsSingle();
       
+      Container.Bind<IWindowRouter>().To<WindowRouter>().FromInstance(_windowRouter).AsSingle();
       Container.BindInterfacesAndSelfTo<BattleConductor>().AsSingle();
       Container.Bind<IDamageCalculator>().To<DamageCalculator>().AsSingle();
       Container.Bind<IUnitRegistry>().To<UnitRegistry>().AsSingle();
@@ -33,6 +40,7 @@ namespace Scenes.App.Scripts.Gameplay._Infrastructure
       Container.Bind<IVFxFactory>().To<VFxFactory>().AsSingle();
 
       Container.BindInterfacesTo<EntryPoint>().AsSingle();
+      Container.BindInterfacesAndSelfTo<GameLoop>().AsSingle();
     }
   }
 }

@@ -20,7 +20,7 @@ namespace Scenes.App.Scripts.Gameplay.Battle
     
     public bool HitProbabilityOccurs(IUnit attacker, IUnit defender)
     {
-      int probability = Random.Range(1, attacker.Stats.GetStat(StatType.Agility) + defender.Stats.GetStat(StatType.Agility));
+      int probability = Random.Range(1, attacker.Stats.GetStat(StatType.Agility) + defender.Stats.GetStat(StatType.Agility) + 1);
 
       return probability > defender.Stats.GetStat(StatType.Agility);
     }

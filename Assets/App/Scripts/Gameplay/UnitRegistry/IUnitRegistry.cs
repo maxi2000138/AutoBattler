@@ -6,6 +6,8 @@ namespace Scenes.App.Scripts.Gameplay.UnitRegistryImpl
   {
     void RegisterPlayer(IUnit player);
     void RegisterEnemy(IUnit enemy);
+    void RemovePlayer();
+    void RemoveEnemy();
     IUnit Player { get; }
     IUnit Enemy { get; }
     void Cleanup();

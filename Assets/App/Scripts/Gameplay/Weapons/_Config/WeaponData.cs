@@ -1,4 +1,5 @@
 ﻿using App.Scripts.Gameplay.Weapons.Data;
+using UnityEngine;
 
 namespace App.Scripts.Gameplay.Weapons._Config
 {
@@ -6,5 +7,6 @@ namespace App.Scripts.Gameplay.Weapons._Config
   {
     public int Damage;
     public DamageType DamageType;
+    public Sprite Sprite;
   }
 }

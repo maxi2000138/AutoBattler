@@ -17,7 +17,14 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 3415496413069653115, guid: 31ae1d29fbb574348a62114a842c5e6c, type: 3}
+    - {fileID: 3415496413069653115, guid: 8730de8dbe2d399499ac229c18e6473a, type: 3}
+    - {fileID: 3415496413069653115, guid: 6dbd862f685d89b468939cab8c366c3d, type: 3}
     - {fileID: 3415496413069653115, guid: 12b2307462f0d4744b0e8159bb378ece, type: 3}
+    - {fileID: 3415496413069653115, guid: e56a49f1ae7890c4288d94ac4978bd7b, type: 3}
+    - {fileID: 3415496413069653115, guid: f9e4da70c7cdf8f458fd9f909d040983, type: 3}
+    - {fileID: 3415496413069653115, guid: eda131f68af56454d9ba2596459c1d67, type: 3}
+    - {fileID: 3415496413069653115, guid: bedff7363c2f59b4f8bb4525756d1f4f, type: 3}
+    - {fileID: 3415496413069653115, guid: 6d0a559d272dc93418efb1108bd65883, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -43,7 +50,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
@@ -55,10 +62,10 @@ MonoBehaviour:
       Data: 2|Scenes.App.Scripts.Gameplay.Units.Config.PlayerData, Assembly-CSharp
     - Name: HealthByLevel
       Entry: 3
-      Data: 3
+      Data: 6
     - Name: StartWeapon
       Entry: 3
-      Data: 1
+      Data: 2
     - Name: LevelBuffs
       Entry: 7
       Data: 3|System.Collections.Generic.List`1[[Scenes.App.Scripts.Gameplay.Units.Config.BuffData,
@@ -82,6 +89,80 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 4|Scenes.App.Scripts.Gameplay.Units.Config.PlayerData, Assembly-CSharp
+    - Name: HealthByLevel
+      Entry: 3
+      Data: 5
+    - Name: StartWeapon
+      Entry: 3
+      Data: 1
+    - Name: LevelBuffs
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[Scenes.App.Scripts.Gameplay.Units.Config.BuffData,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Prefab
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 6|Scenes.App.Scripts.Gameplay.Units.Config.PlayerData, Assembly-CSharp
+    - Name: HealthByLevel
+      Entry: 3
+      Data: 4
+    - Name: StartWeapon
+      Entry: 3
+      Data: 3
+    - Name: LevelBuffs
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Scenes.App.Scripts.Gameplay.Units.Config.BuffData,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Prefab
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -89,7 +170,7 @@ MonoBehaviour:
       Data: 
     - Name: Enemies
       Entry: 7
-      Data: 4|System.Collections.Generic.Dictionary`2[[Scenes.App.Scripts.Gameplay.Units.UnitType,
+      Data: 8|System.Collections.Generic.Dictionary`2[[Scenes.App.Scripts.Gameplay.Units.UnitType,
         Assembly-CSharp],[Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp]],
         mscorlib
     - Name: comparer
@@ -97,7 +178,7 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 6
     - Name: 
       Entry: 7
       Data: 
@@ -106,13 +187,238 @@ MonoBehaviour:
       Data: 101
     - Name: $v
       Entry: 7
-      Data: 5|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
+      Data: 9|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
     - Name: WeaponDamage
       Entry: 3
       Data: 2
     - Name: Stats
       Entry: 7
-      Data: 6|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
+      Data: 10|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
+    - Name: Strength
+      Entry: 3
+      Data: 1
+    - Name: Agility
+      Entry: 3
+      Data: 1
+    - Name: Endurance
+      Entry: 3
+      Data: 1
+    - Name: Health
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Buff
+      Entry: 6
+      Data: 
+    - Name: RewardWeapon
+      Entry: 3
+      Data: 3
+    - Name: Prefab
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 102
+    - Name: $v
+      Entry: 7
+      Data: 11|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
+    - Name: WeaponDamage
+      Entry: 3
+      Data: 2
+    - Name: Stats
+      Entry: 7
+      Data: 12|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
+    - Name: Strength
+      Entry: 3
+      Data: 2
+    - Name: Agility
+      Entry: 3
+      Data: 2
+    - Name: Endurance
+      Entry: 3
+      Data: 1
+    - Name: Health
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Buff
+      Entry: 6
+      Data: 
+    - Name: RewardWeapon
+      Entry: 3
+      Data: 2
+    - Name: Prefab
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 103
+    - Name: $v
+      Entry: 7
+      Data: 13|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
+    - Name: WeaponDamage
+      Entry: 3
+      Data: 1
+    - Name: Stats
+      Entry: 7
+      Data: 14|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
+    - Name: Strength
+      Entry: 3
+      Data: 3
+    - Name: Agility
+      Entry: 3
+      Data: 1
+    - Name: Endurance
+      Entry: 3
+      Data: 2
+    - Name: Health
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Buff
+      Entry: 6
+      Data: 
+    - Name: RewardWeapon
+      Entry: 3
+      Data: 5
+    - Name: Prefab
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 104
+    - Name: $v
+      Entry: 7
+      Data: 15|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
+    - Name: WeaponDamage
+      Entry: 3
+      Data: 3
+    - Name: Stats
+      Entry: 7
+      Data: 16|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
+    - Name: Strength
+      Entry: 3
+      Data: 1
+    - Name: Agility
+      Entry: 3
+      Data: 3
+    - Name: Endurance
+      Entry: 3
+      Data: 1
+    - Name: Health
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Buff
+      Entry: 6
+      Data: 
+    - Name: RewardWeapon
+      Entry: 3
+      Data: 1
+    - Name: Prefab
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 105
+    - Name: $v
+      Entry: 7
+      Data: 17|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
+    - Name: WeaponDamage
+      Entry: 3
+      Data: 1
+    - Name: Stats
+      Entry: 7
+      Data: 18|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
+    - Name: Strength
+      Entry: 3
+      Data: 3
+    - Name: Agility
+      Entry: 3
+      Data: 1
+    - Name: Endurance
+      Entry: 3
+      Data: 3
+    - Name: Health
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: Buff
+      Entry: 6
+      Data: 
+    - Name: RewardWeapon
+      Entry: 3
+      Data: 4
+    - Name: Prefab
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 106
+    - Name: $v
+      Entry: 7
+      Data: 19|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
+    - Name: WeaponDamage
+      Entry: 3
+      Data: 4
+    - Name: Stats
+      Entry: 7
+      Data: 20|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
     - Name: Strength
       Entry: 3
       Data: 3
@@ -124,48 +430,19 @@ MonoBehaviour:
       Data: 3
     - Name: Health
       Entry: 3
-      Data: 3
+      Data: 20
     - Name: 
       Entry: 8
       Data: 
     - Name: Buff
-      Entry: 7
-      Data: 7|Scenes.App.Scripts.Gameplay.Units.Config.BuffData, Assembly-CSharp
-    - Name: Effects
-      Entry: 7
-      Data: 8|System.Collections.Generic.List`1[[App.Scripts.Gameplay.Effects.Effect,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: StatModifiers
-      Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[App.Scripts.Gameplay.Stats.StatModifier,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
+      Entry: 6
       Data: 
     - Name: RewardWeapon
       Entry: 3
-      Data: 3
+      Data: 6
     - Name: Prefab
       Entry: 10
-      Data: 1
+      Data: 8
     - Name: 
       Entry: 8
       Data: 

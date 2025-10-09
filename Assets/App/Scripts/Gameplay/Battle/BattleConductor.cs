@@ -9,15 +9,21 @@ namespace Scenes.App.Scripts.Gameplay.Battle
 {
   public class BattleConductor : IBattleConductor
   {
-    private const float TurnTickDuration = 3f;
+    private const float TurnTickDuration = 2f;
 
     private readonly IUnitRegistry _unitRegistry;
     private readonly IDamageCalculator _damageCalculator;
     private readonly IVFxFactory _vfxFactory;
 
     private bool _started;
-    private float _untilNextTurnTick = TurnTickDuration;
+    private bool _ended;
+    private float _untilNextTurnTick;
     private UnitGroup _lastAttacked;
+    
+    public bool IsBattleStarted => _started;
+    public bool IsBattleEnded => _ended;
+    public bool IsBattleWin { get; private set; } = false;
+    public bool IsGameEnded { get; private set; } = false;
 
     public BattleConductor(IUnitRegistry unitRegistry, IDamageCalculator damageCalculator, IVFxFactory vfxFactory)
     {
@@ -34,17 +40,16 @@ namespace Scenes.App.Scripts.Gameplay.Battle
       UpdateTurnTimer();
     }
 
-    public void Start()
-    {
-      _started = true;
-      _lastAttacked = UnitGroup.None;
-    }
-    
-    public void Finish()
+    public void Start() => _started = true;
+    public void Finish() => _ended = true;
+
+    public void Reset()
     {
       _started = false;
+      _ended = false;
+      _untilNextTurnTick = TurnTickDuration;
+      _lastAttacked = UnitGroup.None;
     }
-
 
     private void UpdateTurnTimer()
     {
@@ -71,9 +76,12 @@ namespace Scenes.App.Scripts.Gameplay.Battle
         _lastAttacked = UnitGroup.Player;
         ProcessAttack(attacker: _unitRegistry.Player, defender: _unitRegistry.Enemy);
       }
-      
-      if (BattleEnded())
+
+      if (BattleOver())
+      {
         Finish();
+        IsBattleWin = BattleWon();
+      }
     }
     
     private void ChooseFirstAttacker()
@@ -92,6 +100,8 @@ namespace Scenes.App.Scripts.Gameplay.Battle
         attacker.MissAttack(defender);
     }
     
-    private bool BattleEnded() => !_unitRegistry.Player.Health.IsAlive || !_unitRegistry.Enemy.Health.IsAlive;
+    public bool BattleOver() => BattleLoosed() || BattleWon();
+    private bool BattleLoosed() => _unitRegistry.Player.Health.IsDead;
+    private bool BattleWon() => _unitRegistry.Enemy.Health.IsDead;
   }
 }

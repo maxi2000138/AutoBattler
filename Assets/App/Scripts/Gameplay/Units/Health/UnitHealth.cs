@@ -10,7 +10,7 @@ namespace Scenes.App.Scripts.Gameplay.Units.Health
     
     public event Action<UnitHealth> HealthChanged;
   
-    public bool IsAlive => CurrentHealth > 0;
+    public bool IsDead => CurrentHealth <= 0;
 
     public void SetMaxHealth(int maxHealth) => MaxHealth = maxHealth;
     public void SetCurrentHealth(int currentHealth)

@@ -2,8 +2,6 @@ namespace Scenes.App.Scripts.Gameplay.Units
 {
   public enum UnitType
   {
-    None = 0,
-    
     Robber = 1,
     Warrior = 2,
     Barbarian = 3,
