@@ -16,7 +16,7 @@ namespace App.Scripts.Gameplay.Units
       _healthBar = healthBar;
     }
 
-    public void UpdateStatBars(Dictionary<StatType, float> baseStats)
+    public void UpdateStatBars(Dictionary<StatType, int> baseStats)
     {
       foreach (var bar in _statBars)
       {
@@ -25,7 +25,7 @@ namespace App.Scripts.Gameplay.Units
       }
     }
 
-    public void UpdateStatBar(StatType statType, float value)
+    public void UpdateStatBar(StatType statType, int value)
     {
       _statBars[statType].Text.text = statType + ": " + value;
       _statBars[statType].Fill.fillAmount = 1;

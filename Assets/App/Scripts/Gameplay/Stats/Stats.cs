@@ -5,21 +5,26 @@ namespace App.Scripts.Gameplay.Stats
 {
   public class Stats
   {
-    public Dictionary<StatType, float> BaseStats => _baseStats;
+    public Dictionary<StatType, int> BaseStats => _baseStats;
     
-    private readonly Dictionary<StatType, float> _baseStats;
+    private readonly Dictionary<StatType, int> _baseStats;
     private readonly Dictionary<StatType, List<StatModifier>> _statModifiers;
     
-    public event Action<StatType, float> StatChanged;
+    public event Action<StatType, int> StatChanged;
 
-    public Stats(Dictionary<StatType, float> baseStats)
+    public Stats(Dictionary<StatType, int> baseStats)
     {
       _baseStats = baseStats;
+      _statModifiers = new Dictionary<StatType, List<StatModifier>>();
     }
     
-    public float GetStat(StatType statType)
+    public int GetStat(StatType statType)
     {
-      float result = _baseStats[statType];
+      int result = _baseStats[statType];
+      
+      if (!_statModifiers.ContainsKey(statType)) 
+        return result;
+      
       foreach (StatModifier modifier in _statModifiers[statType]) 
         result += modifier.AddedValue;
       

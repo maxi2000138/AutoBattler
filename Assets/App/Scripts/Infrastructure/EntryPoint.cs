@@ -1,4 +1,5 @@
 ﻿using System;
+using App.Scripts.Gameplay.Weapons.Data;
 using Scenes.App.Scripts.Gameplay.Battle;
 using Scenes.App.Scripts.Gameplay.Factory;
 using Scenes.App.Scripts.Gameplay.UnitRegistryImpl;
@@ -16,20 +17,25 @@ namespace Scenes.App.Scripts.Infrastructure
     
     private readonly IBattleConductor _battleConductor;
     private readonly IUnitRegistry _unitRegistry;
-    private readonly IHeroFactory _heroFactory;
+    private readonly IUnitFactory _unitFactory;
 
     public EntryPoint(IBattleConductor battleConductor, IUnitRegistry unitRegistry, 
-      IHeroFactory heroFactory)
+      IUnitFactory unitFactory)
     {
       _battleConductor = battleConductor;
       _unitRegistry = unitRegistry;
-      _heroFactory = heroFactory;
+      _unitFactory = unitFactory;
     }
     
     public void Initialize()
     {
-      _unitRegistry.RegisterPlayer(_heroFactory.CreatePlayer(UnitType.Barbarian, at: _leftUnitPosition, lookTo: _centre));
-      _unitRegistry.RegisterEnemy(_heroFactory.CreateEnemy(UnitType.Goblin, at: _rightUnitPosition, lookTo: _centre));
+      var player = _unitFactory.CreatePlayer(UnitType.Barbarian, level: 1, at: _leftUnitPosition, lookTo: _centre);
+      player.SetWeapon(WeaponType.Sword);
+      
+      var enemy = _unitFactory.CreateEnemy(UnitType.Goblin, at: _rightUnitPosition, lookTo: _centre);
+      
+      _unitRegistry.RegisterPlayer(player);
+      _unitRegistry.RegisterEnemy(enemy);
       
       _battleConductor.Start();
     }

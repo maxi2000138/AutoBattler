@@ -154,7 +154,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &169205776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,6 +487,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unitsConfig: {fileID: 11400000, guid: 3f32d5606d6c934439dabf8ca2640597, type: 2}
+  _weaponConfig: {fileID: 11400000, guid: 95f68912cbca77141998e1a3010bdeb5, type: 2}
+  _vfxConfig: {fileID: 11400000, guid: 3a7a970d27b94514ba0c88b731939e3d, type: 2}
 --- !u!4 &1162300745
 Transform:
   m_ObjectHideFlags: 0
