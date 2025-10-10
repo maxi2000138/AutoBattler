@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-AutoBattler-1.0";
 const contentToCache = [
-    "Build/Builds.loader.js",
-    "Build/Builds.framework.js.unityweb",
-    "Build/Builds.data.unityweb",
-    "Build/Builds.wasm.unityweb",
+    "Build/docs.loader.js",
+    "Build/docs.framework.js.unityweb",
+    "Build/docs.data.unityweb",
+    "Build/docs.wasm.unityweb",
     "TemplateData/style.css"
 
 ];
