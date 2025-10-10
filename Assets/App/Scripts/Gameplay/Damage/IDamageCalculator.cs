@@ -4,7 +4,7 @@ namespace Scenes.App.Scripts.Gameplay.Battle
 {
   public interface IDamageCalculator
   {
-    int CalculateDamage(IUnit attacker, IUnit defender);
+    int CalculateDamage(IUnit attacker, IUnit defender, int turnNumber);
     bool HitProbabilityOccurs(IUnit attacker, IUnit defender);
   }
 }

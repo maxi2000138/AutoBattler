@@ -1,4 +1,6 @@
 ﻿using System.Text;
+using Cysharp.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 
 namespace Scenes.App.Scripts.Gameplay.Battle
@@ -6,35 +8,33 @@ namespace Scenes.App.Scripts.Gameplay.Battle
 
   public class DamageLogger : IDamageLogger
   {
+    private readonly TMP_Text _logText;
     private StringBuilder _logBuilder = new StringBuilder();
     
-    public void StartBuildingLog(int characterStrength, int weaponDamage)
+    public DamageLogger(TMP_Text logText)
+    {
+      _logText = logText;
+    }
+    
+    public void StartBuildingLog(string attacker, int characterStrength, int weaponDamage)
     {
       _logBuilder.Clear();
+      _logBuilder.Append($"Attacker: {attacker}\n");
       _logBuilder.Append($"Unit strength: {characterStrength} + Weapon damage: {weaponDamage} = {characterStrength + weaponDamage}\n");
       AddSeparator();
     }
     
-    public void AddAttackEffect(string effectString)
+    public void AddAttackEffect(string effectString) => _logBuilder.AppendLine(effectString);
+    public void AddDefenceEffect(string effectString) => _logBuilder.AppendLine(effectString);
+    public void EndedAttackEffects() => AddSeparator();
+    public async UniTaskVoid FinishBuildingLog()
     {
-      _logBuilder.AppendLine(effectString);
+      _logText.text = _logBuilder.ToString();
+      await UniTask.Delay(1000);
+      Clear();
     }
+    public void Clear() => _logText.text = "";
 
-    public void AddDefenceEffect(string effectString)
-    {
-      _logBuilder.AppendLine(effectString);
-    }
-    
-    public void EndedAttackEffects()
-    {
-      AddSeparator();
-    }
-    
-    public void FinishBuildingLog()
-    {
-      Debug.Log(_logBuilder.ToString());
-    }
-    
-    private StringBuilder AddSeparator() => _logBuilder.AppendLine("--------------------------------");
+    private void AddSeparator() => _logBuilder.AppendLine("--------------------------------");
   }
 }

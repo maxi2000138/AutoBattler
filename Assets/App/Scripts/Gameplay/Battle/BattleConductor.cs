@@ -20,11 +20,13 @@ namespace Scenes.App.Scripts.Gameplay.Battle
     private bool _ended;
     private float _untilNextTurnTick;
     private UnitGroup _lastAttacked;
+    private float _turnNumber;
     
     public bool IsBattleStarted => _started;
     public bool IsBattleEnded => _ended;
     public bool IsBattleWin { get; private set; } = false;
     public bool IsGameEnded { get; private set; } = false;
+    
 
     public BattleConductor(IUnitRegistry unitRegistry, IDamageCalculator damageCalculator, IVFxFactory vfxFactory)
     {
@@ -48,6 +50,7 @@ namespace Scenes.App.Scripts.Gameplay.Battle
     {
       _started = false;
       _ended = false;
+      _turnNumber = 1;
       _untilNextTurnTick = TurnTickDuration;
       _lastAttacked = UnitGroup.None;
     }
@@ -71,11 +74,13 @@ namespace Scenes.App.Scripts.Gameplay.Battle
       {
         _lastAttacked = UnitGroup.Enemy;
         ProcessAttack(attacker: _unitRegistry.Enemy, defender: _unitRegistry.Player);
+        _turnNumber+=0.5f;
       }
       else if (_lastAttacked == UnitGroup.Enemy)
       {
         _lastAttacked = UnitGroup.Player;
         ProcessAttack(attacker: _unitRegistry.Player, defender: _unitRegistry.Enemy);
+        _turnNumber+=0.5f;
       }
 
       if (BattleOver())
@@ -97,7 +102,7 @@ namespace Scenes.App.Scripts.Gameplay.Battle
     {
       if (_damageCalculator.HitProbabilityOccurs(attacker, defender))
       { 
-        int damage = _damageCalculator.CalculateDamage(attacker, defender);
+        int damage = _damageCalculator.CalculateDamage(attacker, defender,(int)Mathf.Floor(_turnNumber));
         attacker.Attack(defender, damage);
       }
       else

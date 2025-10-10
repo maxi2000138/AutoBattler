@@ -1,4 +1,6 @@
-﻿using App.Scripts.Gameplay.Stats;
+﻿using System.Linq;
+using App.Scripts.Gameplay.Effects;
+using App.Scripts.Gameplay.Stats;
 using App.Scripts.Gameplay.Weapons._Config;
 using App.Scripts.Infrastructure.VFX;
 using Scenes.App.Scripts.Gameplay.UnitRegistryImpl;
@@ -48,8 +50,8 @@ namespace Scenes.App.Scripts.Gameplay.Factory
       var enemy = new Enemy(enemyType, _statsFactory.GetEnemyBaseStats(enemyType));
       SetupBaseUnit(enemy , at, lookTo, enemyData.Prefab);
       
-      if(enemyData.Buff is { Effects: not null }) 
-        enemy.AddUnitEffects(enemyData.Buff.Effects);
+      if(enemyData.Buff != null) 
+        AddBuffToUnit(enemy, enemyData.Buff);
 
       _unitRegistry.RegisterEnemy(enemy);
       
@@ -63,12 +65,14 @@ namespace Scenes.App.Scripts.Gameplay.Factory
       player.Health.SetMaxHealth(player.Health.MaxHealth + player.Stats.GetStat(StatType.Endurance));
       
       int currentStatLevel = player.StatLevel(unitType);
-      if (playerData.LevelBuffs.Count >= currentStatLevel+1 && playerData.LevelBuffs[currentStatLevel] is { Effects: not null }) 
-        player.AddUnitEffects(playerData.LevelBuffs[currentStatLevel].Effects);
+      var buff = playerData.LevelBuffs[currentStatLevel];
+
+      if (playerData.LevelBuffs.Count >= currentStatLevel + 1 && buff != null) 
+        AddBuffToUnit(player, buff);
       
       player.AddUnitTypeAndUpgradeLevel(unitType);
     }
-
+    
     private void SetupBaseUnit(Unit unit, Vector2 at, Vector2 lookTo, GameObject prefab)
     {
       UnitView unitView = Object.Instantiate(prefab, at, Quaternion.identity)
@@ -78,6 +82,15 @@ namespace Scenes.App.Scripts.Gameplay.Factory
       unitView.RotateTo(lookTo - at);
       
       unit.UpdateView(unitView);
+    }
+    
+    private void AddBuffToUnit(Unit unit, BuffData buff)
+    {
+      if(buff.Effects != null) 
+        unit.AddUnitEffects(buff.Effects);
+
+      if(buff.StatModifiers != null) 
+        unit.Stats.ApplyModifiers(buff.StatModifiers);
     }
   }
 }

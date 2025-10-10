@@ -10,6 +10,7 @@ using Scenes.App.Scripts.Gameplay.Factory;
 using Scenes.App.Scripts.Gameplay.UnitRegistryImpl;
 using Scenes.App.Scripts.Gameplay.Units.Config;
 using Scenes.App.Scripts.Infrastructure;
+using TMPro;
 using UnityEngine;
 using Zenject;
 
@@ -24,6 +25,7 @@ namespace Scenes.App.Scripts.Gameplay._Infrastructure
     
     [Header("Services")]
     [SerializeField] private WindowRouter _windowRouter;
+    [SerializeField] private TMP_Text _logText;
     
     public override void InstallBindings()
     {
@@ -32,8 +34,8 @@ namespace Scenes.App.Scripts.Gameplay._Infrastructure
       Container.Bind<VFxConfig>().FromInstance(_vfxConfig).AsSingle();
       
       Container.Bind<IWindowRouter>().To<WindowRouter>().FromInstance(_windowRouter).AsSingle();
+      Container.Bind<IDamageLogger>().To<DamageLogger>().AsSingle().WithArguments(_logText);
       Container.BindInterfacesAndSelfTo<BattleConductor>().AsSingle();
-      Container.Bind<IDamageLogger>().To<DamageLogger>().AsSingle();
       Container.Bind<IDamageCalculator>().To<DamageCalculator>().AsSingle();
       Container.Bind<IUnitRegistry>().To<UnitRegistry>().AsSingle();
       Container.Bind<IUnitFactory>().To<UnitFactory>().AsSingle();

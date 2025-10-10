@@ -28,16 +28,17 @@ namespace Scenes.App.Scripts.Gameplay.Battle
       return probability > defender.Stats.GetStat(StatType.Agility);
     }
     
-    public int CalculateDamage(IUnit attacker, IUnit defender)
+    public int CalculateDamage(IUnit attacker, IUnit defender, int turnNumber)
     {
-      var damage = GetBaseDamage(attacker);
-
+      var environment = GetBaseEnviroment(attacker);
+      environment.TurnNumber = turnNumber;
+      
       foreach (Effect effect in attacker.EffectsContainer.AttackEffects)
       {
-        if (effect.CanApply(attacker, defender))
+        if (effect.CanApply(attacker, defender, environment))
         { 
-          _damageLogger.AddAttackEffect(effect.ToString(damage));
-          damage = effect.Apply(attacker, defender, damage);
+          _damageLogger.AddAttackEffect(effect.ToString(attacker, defender, environment));
+          effect.Apply(attacker, defender, environment);
         }
       }
       
@@ -45,15 +46,18 @@ namespace Scenes.App.Scripts.Gameplay.Battle
 
       foreach (Effect effect in defender.EffectsContainer.DefenceEffects)
       {
-        _damageLogger.AddDefenceEffect(effect.ToString(damage));
-        damage = effect.Apply(attacker, defender, damage);
+        if (effect.CanApply(attacker, defender, environment))
+        {
+          _damageLogger.AddDefenceEffect(effect.ToString(attacker, defender, environment));
+          effect.Apply(attacker, defender, environment);
+        }
       }
         
       _damageLogger.FinishBuildingLog();
-      return damage;
+      return environment.Damage;
     }
     
-    private int GetBaseDamage(IUnit attacker)
+    private EffectEnvironment GetBaseEnviroment(IUnit attacker)
     {
       int strength;
       int weaponDamage;
@@ -73,8 +77,12 @@ namespace Scenes.App.Scripts.Gameplay.Battle
         throw new Exception("Unknown unit type");
       }
 
-      _damageLogger.StartBuildingLog(strength, weaponDamage);
-      return strength + weaponDamage;
+      _damageLogger.StartBuildingLog(attacker is Player ? "Player" : "Enemy", strength, weaponDamage);
+
+      return new EffectEnvironment(
+        strength: strength, 
+        weaponDamage: weaponDamage, 
+        weapon: attacker is Player attackPlayer ? _weaponsConfig.Weapons[attackPlayer.WeaponType] : null);
     }
   }
 }

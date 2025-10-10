@@ -72,7 +72,106 @@ MonoBehaviour:
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 4|Scenes.App.Scripts.Gameplay.Units.Config.BuffData, Assembly-CSharp
+    - Name: Effects
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[App.Scripts.Gameplay.Effects.Effect,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|App.Scripts.Gameplay.Effects.Variants.RageEffect, Assembly-CSharp
+    - Name: _increaseTurns
+      Entry: 3
+      Data: 3
+    - Name: _damageIncrease
+      Entry: 3
+      Data: 2
+    - Name: _damageDecrease
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: StatModifiers
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|Scenes.App.Scripts.Gameplay.Units.Config.BuffData, Assembly-CSharp
+    - Name: Effects
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[App.Scripts.Gameplay.Effects.Effect,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 9|App.Scripts.Gameplay.Effects.Variants.StoneSkinEffect, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: StatModifiers
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|Scenes.App.Scripts.Gameplay.Units.Config.BuffData, Assembly-CSharp
+    - Name: Effects
+      Entry: 6
+      Data: 
+    - Name: StatModifiers
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[App.Scripts.Gameplay.Stats.StatModifier,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 12|App.Scripts.Gameplay.Stats.StatModifier, Assembly-CSharp
+    - Name: StatType
+      Entry: 3
+      Data: 2
+    - Name: AddedValue
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -96,7 +195,7 @@ MonoBehaviour:
       Data: 2
     - Name: $v
       Entry: 7
-      Data: 4|Scenes.App.Scripts.Gameplay.Units.Config.PlayerData, Assembly-CSharp
+      Data: 13|Scenes.App.Scripts.Gameplay.Units.Config.PlayerData, Assembly-CSharp
     - Name: HealthByLevel
       Entry: 3
       Data: 5
@@ -105,11 +204,107 @@ MonoBehaviour:
       Data: 1
     - Name: LevelBuffs
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[Scenes.App.Scripts.Gameplay.Units.Config.BuffData,
+      Data: 14|System.Collections.Generic.List`1[[Scenes.App.Scripts.Gameplay.Units.Config.BuffData,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 15|Scenes.App.Scripts.Gameplay.Units.Config.BuffData, Assembly-CSharp
+    - Name: Effects
+      Entry: 7
+      Data: 16|System.Collections.Generic.List`1[[App.Scripts.Gameplay.Effects.Effect,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 17|App.Scripts.Gameplay.Effects.Variants.RushToActionEffect, Assembly-CSharp
+    - Name: _weaponDamageScale
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: StatModifiers
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 18|Scenes.App.Scripts.Gameplay.Units.Config.BuffData, Assembly-CSharp
+    - Name: Effects
+      Entry: 7
+      Data: 19|System.Collections.Generic.List`1[[App.Scripts.Gameplay.Effects.Effect,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 20|App.Scripts.Gameplay.Effects.Variants.ShieldEffect, Assembly-CSharp
+    - Name: _damageDecrease
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: StatModifiers
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 21|Scenes.App.Scripts.Gameplay.Units.Config.BuffData, Assembly-CSharp
+    - Name: Effects
+      Entry: 6
+      Data: 
+    - Name: StatModifiers
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[App.Scripts.Gameplay.Stats.StatModifier,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 23|App.Scripts.Gameplay.Stats.StatModifier, Assembly-CSharp
+    - Name: StatType
+      Entry: 3
       Data: 0
+    - Name: AddedValue
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -133,7 +328,7 @@ MonoBehaviour:
       Data: 1
     - Name: $v
       Entry: 7
-      Data: 6|Scenes.App.Scripts.Gameplay.Units.Config.PlayerData, Assembly-CSharp
+      Data: 24|Scenes.App.Scripts.Gameplay.Units.Config.PlayerData, Assembly-CSharp
     - Name: HealthByLevel
       Entry: 3
       Data: 4
@@ -142,11 +337,104 @@ MonoBehaviour:
       Data: 3
     - Name: LevelBuffs
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Scenes.App.Scripts.Gameplay.Units.Config.BuffData,
+      Data: 25|System.Collections.Generic.List`1[[Scenes.App.Scripts.Gameplay.Units.Config.BuffData,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 26|Scenes.App.Scripts.Gameplay.Units.Config.BuffData, Assembly-CSharp
+    - Name: Effects
+      Entry: 7
+      Data: 27|System.Collections.Generic.List`1[[App.Scripts.Gameplay.Effects.Effect,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 28|App.Scripts.Gameplay.Effects.Variants.HiddenAttackEffect, Assembly-CSharp
+    - Name: _damageIncrease
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: StatModifiers
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 29|Scenes.App.Scripts.Gameplay.Units.Config.BuffData, Assembly-CSharp
+    - Name: Effects
+      Entry: 6
+      Data: 
+    - Name: StatModifiers
+      Entry: 7
+      Data: 30|System.Collections.Generic.List`1[[App.Scripts.Gameplay.Stats.StatModifier,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 31|App.Scripts.Gameplay.Stats.StatModifier, Assembly-CSharp
+    - Name: StatType
+      Entry: 3
+      Data: 1
+    - Name: AddedValue
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 32|Scenes.App.Scripts.Gameplay.Units.Config.BuffData, Assembly-CSharp
+    - Name: Effects
+      Entry: 7
+      Data: 33|System.Collections.Generic.List`1[[App.Scripts.Gameplay.Effects.Effect,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 34|App.Scripts.Gameplay.Effects.Variants.PoisonEffect, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: StatModifiers
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -170,7 +458,7 @@ MonoBehaviour:
       Data: 
     - Name: Enemies
       Entry: 7
-      Data: 8|System.Collections.Generic.Dictionary`2[[Scenes.App.Scripts.Gameplay.Units.UnitType,
+      Data: 35|System.Collections.Generic.Dictionary`2[[Scenes.App.Scripts.Gameplay.Units.UnitType,
         Assembly-CSharp],[Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp]],
         mscorlib
     - Name: comparer
@@ -187,13 +475,13 @@ MonoBehaviour:
       Data: 101
     - Name: $v
       Entry: 7
-      Data: 9|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
+      Data: 36|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
     - Name: WeaponDamage
       Entry: 3
       Data: 2
     - Name: Stats
       Entry: 7
-      Data: 10|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
+      Data: 37|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
     - Name: Strength
       Entry: 3
       Data: 1
@@ -232,13 +520,13 @@ MonoBehaviour:
       Data: 102
     - Name: $v
       Entry: 7
-      Data: 11|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
+      Data: 38|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
     - Name: WeaponDamage
       Entry: 3
       Data: 2
     - Name: Stats
       Entry: 7
-      Data: 12|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
+      Data: 39|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
     - Name: Strength
       Entry: 3
       Data: 2
@@ -255,7 +543,35 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: Buff
+      Entry: 7
+      Data: 40|Scenes.App.Scripts.Gameplay.Units.Config.BuffData, Assembly-CSharp
+    - Name: Effects
+      Entry: 7
+      Data: 41|System.Collections.Generic.List`1[[App.Scripts.Gameplay.Effects.Effect,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 42|App.Scripts.Gameplay.Effects.Variants.SlashVulnerabilityEffect, Assembly-CSharp
+    - Name: _damageIncreaseValue
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: StatModifiers
       Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: RewardWeapon
       Entry: 3
@@ -277,13 +593,13 @@ MonoBehaviour:
       Data: 103
     - Name: $v
       Entry: 7
-      Data: 13|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
+      Data: 43|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
     - Name: WeaponDamage
       Entry: 3
       Data: 1
     - Name: Stats
       Entry: 7
-      Data: 14|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
+      Data: 44|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
     - Name: Strength
       Entry: 3
       Data: 3
@@ -300,7 +616,32 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: Buff
+      Entry: 7
+      Data: 45|Scenes.App.Scripts.Gameplay.Units.Config.BuffData, Assembly-CSharp
+    - Name: Effects
+      Entry: 7
+      Data: 46|System.Collections.Generic.List`1[[App.Scripts.Gameplay.Effects.Effect,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 47|App.Scripts.Gameplay.Effects.Variants.BludgeonResistEffect, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: StatModifiers
       Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: RewardWeapon
       Entry: 3
@@ -322,13 +663,13 @@ MonoBehaviour:
       Data: 104
     - Name: $v
       Entry: 7
-      Data: 15|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
+      Data: 48|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
     - Name: WeaponDamage
       Entry: 3
       Data: 3
     - Name: Stats
       Entry: 7
-      Data: 16|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
+      Data: 49|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
     - Name: Strength
       Entry: 3
       Data: 1
@@ -345,7 +686,35 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: Buff
+      Entry: 7
+      Data: 50|Scenes.App.Scripts.Gameplay.Units.Config.BuffData, Assembly-CSharp
+    - Name: Effects
+      Entry: 7
+      Data: 51|System.Collections.Generic.List`1[[App.Scripts.Gameplay.Effects.Effect,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 52|App.Scripts.Gameplay.Effects.Variants.HiddenAttackEffect, Assembly-CSharp
+    - Name: _damageIncrease
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: StatModifiers
       Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: RewardWeapon
       Entry: 3
@@ -367,13 +736,13 @@ MonoBehaviour:
       Data: 105
     - Name: $v
       Entry: 7
-      Data: 17|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
+      Data: 53|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
     - Name: WeaponDamage
       Entry: 3
       Data: 1
     - Name: Stats
       Entry: 7
-      Data: 18|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
+      Data: 54|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
     - Name: Strength
       Entry: 3
       Data: 3
@@ -390,7 +759,32 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: Buff
+      Entry: 7
+      Data: 55|Scenes.App.Scripts.Gameplay.Units.Config.BuffData, Assembly-CSharp
+    - Name: Effects
+      Entry: 7
+      Data: 56|System.Collections.Generic.List`1[[App.Scripts.Gameplay.Effects.Effect,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 57|App.Scripts.Gameplay.Effects.Variants.StoneSkinEffect, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: StatModifiers
       Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: RewardWeapon
       Entry: 3
@@ -412,13 +806,13 @@ MonoBehaviour:
       Data: 106
     - Name: $v
       Entry: 7
-      Data: 19|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
+      Data: 58|Scenes.App.Scripts.Gameplay.Units.Config.EnemyData, Assembly-CSharp
     - Name: WeaponDamage
       Entry: 3
       Data: 4
     - Name: Stats
       Entry: 7
-      Data: 20|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
+      Data: 59|Scenes.App.Scripts.Gameplay.Units.UnitStatsData, Assembly-CSharp
     - Name: Strength
       Entry: 3
       Data: 3
@@ -435,7 +829,35 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: Buff
+      Entry: 7
+      Data: 60|Scenes.App.Scripts.Gameplay.Units.Config.BuffData, Assembly-CSharp
+    - Name: Effects
+      Entry: 7
+      Data: 61|System.Collections.Generic.List`1[[App.Scripts.Gameplay.Effects.Effect,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 62|App.Scripts.Gameplay.Effects.Variants.FireBreathingEffect, Assembly-CSharp
+    - Name: _damageIncrease
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: StatModifiers
       Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: RewardWeapon
       Entry: 3

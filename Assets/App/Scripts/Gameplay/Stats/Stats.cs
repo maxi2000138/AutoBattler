@@ -31,6 +31,8 @@ namespace App.Scripts.Gameplay.Stats
       return result;
     }
     
+    public void ApplyModifiers(List<StatModifier> modifiers) => modifiers.ForEach(ApplyModifier);
+
     public void ApplyModifier(StatModifier modifier)
     {
       if (!_statModifiers.ContainsKey(modifier.StatType))
