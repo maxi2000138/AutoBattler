@@ -6,6 +6,9 @@ namespace App.Scripts.Gameplay.Effects
   {
     public abstract EffectType Type { get; }
     
+    public abstract bool CanApply(IUnit attacker, IUnit defender);
     public abstract int Apply(IUnit attacker, IUnit defender, float damage);
+    
+    public abstract string ToString(float damage);
   }
 }

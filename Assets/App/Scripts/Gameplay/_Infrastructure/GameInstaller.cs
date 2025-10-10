@@ -33,6 +33,7 @@ namespace Scenes.App.Scripts.Gameplay._Infrastructure
       
       Container.Bind<IWindowRouter>().To<WindowRouter>().FromInstance(_windowRouter).AsSingle();
       Container.BindInterfacesAndSelfTo<BattleConductor>().AsSingle();
+      Container.Bind<IDamageLogger>().To<DamageLogger>().AsSingle();
       Container.Bind<IDamageCalculator>().To<DamageCalculator>().AsSingle();
       Container.Bind<IUnitRegistry>().To<UnitRegistry>().AsSingle();
       Container.Bind<IUnitFactory>().To<UnitFactory>().AsSingle();
