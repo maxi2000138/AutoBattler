@@ -4,12 +4,12 @@ namespace Scenes.App.Scripts.Gameplay.UnitRegistryImpl
 {
   public interface IUnitRegistry
   {
-    void RegisterPlayer(IUnit player);
-    void RegisterEnemy(IUnit enemy);
+    void RegisterPlayer(Player player);
+    void RegisterEnemy(Enemy enemy);
     void RemovePlayer();
     void RemoveEnemy();
-    IUnit Player { get; }
-    IUnit Enemy { get; }
+    Player Player { get; }
+    Enemy Enemy { get; }
     void Cleanup();
   }
 }

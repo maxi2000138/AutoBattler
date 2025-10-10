@@ -4,10 +4,10 @@ namespace Scenes.App.Scripts.Gameplay.UnitRegistryImpl
 {
   public class UnitRegistry : IUnitRegistry
   {
-    public IUnit Player { get; private set; }
-    public IUnit Enemy { get; private set; }
+    public Player Player { get; private set; }
+    public Enemy Enemy { get; private set; }
     
-    public void RegisterPlayer(IUnit player)
+    public void RegisterPlayer(Player player)
     {
       Player?.Dispose();
       Player = player;
@@ -19,7 +19,7 @@ namespace Scenes.App.Scripts.Gameplay.UnitRegistryImpl
       Player = null;
     }
     
-    public void RegisterEnemy(IUnit enemy)
+    public void RegisterEnemy(Enemy enemy)
     {
       Enemy?.Dispose();
       Enemy = enemy;

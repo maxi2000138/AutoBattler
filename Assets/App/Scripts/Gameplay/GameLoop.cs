@@ -1,4 +1,5 @@
-﻿using App.Scripts.Gameplay.Windows;
+﻿using App.Scripts.Gameplay.Stats;
+using App.Scripts.Gameplay.Windows;
 using App.Scripts.Utils;
 using Cysharp.Threading.Tasks;
 using Scenes.App.Scripts.Gameplay.Battle;
@@ -23,9 +24,9 @@ namespace App.Scripts.Gameplay
     private readonly Vector2 _rightUnitPosition = new Vector2(5, -2);
     private readonly Vector2 _centre = Vector2.zero;
 
-    private int WinBattlesCount; 
-    private Player _player;
-    private Enemy _enemy;
+    private int WinBattlesCount;
+    private Player Player => _unitRegistry.Player;
+    private Enemy Enemy => _unitRegistry.Enemy;
     
 
     public GameLoop(IBattleConductor battleConductor, IUnitRegistry unitRegistry, 
@@ -65,7 +66,6 @@ namespace App.Scripts.Gameplay
 
     private async UniTaskVoid LooseBattle()
     {
-      _unitRegistry.RemovePlayer();
       await LooseWindow();
         
       _unitRegistry.Cleanup();
@@ -75,7 +75,6 @@ namespace App.Scripts.Gameplay
     private async UniTaskVoid WinBattle()
     {
       WinBattlesCount++;
-      _unitRegistry.RemoveEnemy();
 
       if (GameCompleted())
       {
@@ -86,12 +85,12 @@ namespace App.Scripts.Gameplay
       await BattleWinWindow();
       
       if (await NeedChangeWeapon()) 
-        _player.SetWeapon(_unitsConfig.Enemies[_enemy.UnitType].RewardWeapon);
+        Player.SetWeapon(_unitsConfig.Enemies[Enemy.UnitType].RewardWeapon);
+
+      if (Player.Level < 3) 
+        _unitFactory.UpdatePlayerLevel(await NextPlayerType(), Player);
       
-      if(_player.Level < 3)
-        _unitFactory.UpdatePlayerLevel(await NextPlayerType(), _player);
-      
-      _player.Health.SetCurrentHealth(_player.Health.MaxHealth);
+      Player.Health.SetCurrentHealth(Player.Health.MaxHealth);
       
       SpawnRandomEnemy();
       _battleConductor.Start();
@@ -100,17 +99,17 @@ namespace App.Scripts.Gameplay
     private bool GameCompleted() => WinBattlesCount >= 5;
     private void ResetWinBattlesCount() => WinBattlesCount = 0;
     
-    private void SpawnPlayer(UnitType playerType) => _player = _unitFactory.CreatePlayer(playerType, at: _leftUnitPosition, lookTo: _centre);
+    private void SpawnPlayer(UnitType playerType) => _unitFactory.CreatePlayer(playerType, at: _leftUnitPosition, lookTo: _centre);
     private void SpawnRandomEnemy()
     {
       UnitType enemyType = UnitTypes.Enemy.PickRandom();
-      _enemy = _unitFactory.CreateEnemy(enemyType, at: _rightUnitPosition, lookTo: _centre);
+      _unitFactory.CreateEnemy(enemyType, at: _rightUnitPosition, lookTo: _centre);
     }
 
     private UniTask<bool> GameEndWindow() => _windowRouter.GameWinWindow.SetupAndShow();
     private UniTask<bool> BattleWinWindow() => _windowRouter.BattleWinWindow.SetupAndShow();
     private UniTask<bool> LooseWindow() => _windowRouter.LooseWindow.SetupAndShow();
     private UniTask<UnitType> NextPlayerType() => _windowRouter.ChooseUnitWindow.ShowAndSetup(UnitTypes.Player);
-    private UniTask<bool> NeedChangeWeapon() => _windowRouter.ChangeWeaponWindow.SetupAndShow(_unitsConfig.Enemies[_enemy.UnitType].RewardWeapon);
+    private UniTask<bool> NeedChangeWeapon() => _windowRouter.ChangeWeaponWindow.SetupAndShow(_unitsConfig.Enemies[Enemy.UnitType].RewardWeapon);
   }
 }

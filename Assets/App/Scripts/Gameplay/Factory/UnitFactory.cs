@@ -60,6 +60,8 @@ namespace Scenes.App.Scripts.Gameplay.Factory
     {
       PlayerData playerData = _unitsConfig.Players[unitType];
 
+      player.Health.SetMaxHealth(player.Health.MaxHealth + player.Stats.GetStat(StatType.Endurance));
+      
       int currentStatLevel = player.StatLevel(unitType);
       if (playerData.LevelBuffs.Count >= currentStatLevel+1 && playerData.LevelBuffs[currentStatLevel] is { Effects: not null }) 
         player.AddUnitEffects(playerData.LevelBuffs[currentStatLevel].Effects);

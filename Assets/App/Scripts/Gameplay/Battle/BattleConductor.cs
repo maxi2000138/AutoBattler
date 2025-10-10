@@ -1,4 +1,5 @@
 using System;
+using App.Scripts.Gameplay.Stats;
 using App.Scripts.Infrastructure.VFX;
 using Scenes.App.Scripts.Gameplay.UnitRegistryImpl;
 using Scenes.App.Scripts.Gameplay.Units;
@@ -86,7 +87,10 @@ namespace Scenes.App.Scripts.Gameplay.Battle
     
     private void ChooseFirstAttacker()
     {
-      _lastAttacked = UnitGroup.Enemy;
+      if(_unitRegistry.Player.Stats.GetStat(StatType.Agility) >= _unitRegistry.Enemy.Stats.GetStat(StatType.Agility))
+        _lastAttacked = UnitGroup.Enemy;
+      else
+        _lastAttacked = UnitGroup.Player;
     }
 
     private void ProcessAttack(IUnit attacker, IUnit defender)
