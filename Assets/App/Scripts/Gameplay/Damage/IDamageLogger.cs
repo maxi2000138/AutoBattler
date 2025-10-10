@@ -9,6 +9,6 @@ namespace Scenes.App.Scripts.Gameplay.Battle
     void AddDefenceEffect(string effectString);
     void EndedAttackEffects();
     UniTaskVoid FinishBuildingLog();
-    void Clear();
+    void ClearLogs();
   }
 }

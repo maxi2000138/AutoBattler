@@ -1,5 +1,6 @@
 ﻿using App.Scripts.Gameplay.Windows.ChangeWeapon;
 using App.Scripts.Gameplay.Windows.Loose;
+using App.Scripts.Gameplay.Windows.Main;
 using App.Scripts.Gameplay.Windows.Win;
 
 namespace App.Scripts.Gameplay.Windows
@@ -11,5 +12,6 @@ namespace App.Scripts.Gameplay.Windows
     LooseWindow LooseWindow { get; }
     ChangeWeaponWindow ChangeWeaponWindow { get; }
     ChooseUnitWindow ChooseUnitWindow { get; }
+    MainWindow MainWindow { get; }
   }
 }

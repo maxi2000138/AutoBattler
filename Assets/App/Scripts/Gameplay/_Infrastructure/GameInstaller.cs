@@ -25,7 +25,6 @@ namespace Scenes.App.Scripts.Gameplay._Infrastructure
     
     [Header("Services")]
     [SerializeField] private WindowRouter _windowRouter;
-    [SerializeField] private TMP_Text _logText;
     
     public override void InstallBindings()
     {
@@ -34,7 +33,7 @@ namespace Scenes.App.Scripts.Gameplay._Infrastructure
       Container.Bind<VFxConfig>().FromInstance(_vfxConfig).AsSingle();
       
       Container.Bind<IWindowRouter>().To<WindowRouter>().FromInstance(_windowRouter).AsSingle();
-      Container.Bind<IDamageLogger>().To<DamageLogger>().AsSingle().WithArguments(_logText);
+      Container.Bind<IDamageLogger>().To<DamageLogger>().AsSingle();
       Container.BindInterfacesAndSelfTo<BattleConductor>().AsSingle();
       Container.Bind<IDamageCalculator>().To<DamageCalculator>().AsSingle();
       Container.Bind<IUnitRegistry>().To<UnitRegistry>().AsSingle();

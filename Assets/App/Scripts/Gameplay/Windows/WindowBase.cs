@@ -30,4 +30,26 @@ namespace App.Scripts.Gameplay.Windows.Win
       gameObject.SetActive(false);
     }
   }
+  
+  public abstract class WindowBase : MonoBehaviour
+  {
+    protected void Show()
+    {
+      ShowWindow();
+    }
+    
+    protected void Hide()
+    {
+      HideWindow();
+    }
+    
+    private void ShowWindow()
+    {
+      gameObject.SetActive(true);
+    }
+    private void HideWindow()
+    {
+      gameObject.SetActive(false);
+    }
+  }
 }

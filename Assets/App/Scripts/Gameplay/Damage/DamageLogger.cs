@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using App.Scripts.Gameplay.Windows;
 using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -8,12 +9,14 @@ namespace Scenes.App.Scripts.Gameplay.Battle
 
   public class DamageLogger : IDamageLogger
   {
-    private readonly TMP_Text _logText;
-    private StringBuilder _logBuilder = new StringBuilder();
+    private const int LogDuration = 1500;
     
-    public DamageLogger(TMP_Text logText)
+    private readonly IWindowRouter _windowRouter;
+    private readonly StringBuilder _logBuilder = new StringBuilder();
+    
+    public DamageLogger(IWindowRouter windowRouter)
     {
-      _logText = logText;
+      _windowRouter = windowRouter;
     }
     
     public void StartBuildingLog(string attacker, int characterStrength, int weaponDamage)
@@ -29,12 +32,14 @@ namespace Scenes.App.Scripts.Gameplay.Battle
     public void EndedAttackEffects() => AddSeparator();
     public async UniTaskVoid FinishBuildingLog()
     {
-      _logText.text = _logBuilder.ToString();
-      await UniTask.Delay(1000);
-      Clear();
+      UpdateLogText(_logBuilder.ToString());
+      await UniTask.Delay(LogDuration);
+      ClearLogs();
     }
-    public void Clear() => _logText.text = "";
-
+    
+    public void ClearLogs() => UpdateLogText("");
+    
+    private void UpdateLogText(string text) => _windowRouter.MainWindow.UpdateMainInfo(text);
     private void AddSeparator() => _logBuilder.AppendLine("--------------------------------");
   }
 }

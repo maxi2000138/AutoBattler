@@ -554,7 +554,8 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 42|App.Scripts.Gameplay.Effects.Variants.SlashVulnerabilityEffect, Assembly-CSharp
+      Data: 42|App.Scripts.Gameplay.Effects.Variants.BludgeonVulnerabilityEffect,
+        Assembly-CSharp
     - Name: _damageIncreaseValue
       Entry: 3
       Data: 2
@@ -627,7 +628,7 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 47|App.Scripts.Gameplay.Effects.Variants.BludgeonResistEffect, Assembly-CSharp
+      Data: 47|App.Scripts.Gameplay.Effects.Variants.SlashResistEffect, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
