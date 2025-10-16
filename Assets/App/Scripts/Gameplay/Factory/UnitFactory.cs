@@ -63,6 +63,7 @@ namespace Scenes.App.Scripts.Gameplay.Factory
       PlayerData playerData = _unitsConfig.Players[unitType];
 
       player.Health.SetMaxHealth(player.Health.MaxHealth + player.Stats.GetStat(StatType.Endurance));
+      player.Health.SetCurrentHealth(player.Health.MaxHealth);
       
       int currentStatLevel = player.StatLevel(unitType);
       var buff = playerData.LevelBuffs[currentStatLevel];

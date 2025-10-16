@@ -90,8 +90,6 @@ namespace App.Scripts.Gameplay
       if (Player.Level < 3) 
         _unitFactory.UpdatePlayerLevel(await NextPlayerType(), Player);
       
-      Player.Health.SetCurrentHealth(Player.Health.MaxHealth);
-      
       SpawnRandomEnemy();
       _battleConductor.Start();
     }
