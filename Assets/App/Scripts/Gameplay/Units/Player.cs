@@ -6,14 +6,16 @@ namespace Scenes.App.Scripts.Gameplay.Units
   public class Player : Unit
   {
     public int Level { get; private set; }
+    public int MaxLevel { get; private set; }
     public WeaponType WeaponType { get; private set; }
 
     private Dictionary<UnitType, int> _unitTypes;
     
-    public Player(UnitType unitType, UnitStatsData statsData) : base(unitType, statsData)
+    public Player(UnitType unitType, UnitStatsData statsData, int maxLevel) : base(unitType, statsData)
     {
       _unitTypes = new Dictionary<UnitType, int>();
       Level = 0;
+      MaxLevel = maxLevel;
     }
     
     

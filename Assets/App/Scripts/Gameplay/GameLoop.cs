@@ -87,7 +87,7 @@ namespace App.Scripts.Gameplay
       if (await NeedChangeWeapon()) 
         Player.SetWeapon(_unitsConfig.Enemies[Enemy.UnitType].RewardWeapon);
 
-      if (Player.Level < 3) 
+      if (Player.Level < Player.MaxLevel) 
         _unitFactory.UpdatePlayerLevel(await NextPlayerType(), Player);
       
       SpawnRandomEnemy();

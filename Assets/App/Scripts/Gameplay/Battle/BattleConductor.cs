@@ -25,7 +25,6 @@ namespace Scenes.App.Scripts.Gameplay.Battle
     public bool IsBattleStarted => _started;
     public bool IsBattleEnded => _ended;
     public bool IsBattleWin { get; private set; } = false;
-    public bool IsGameEnded { get; private set; } = false;
     
 
     public BattleConductor(IUnitRegistry unitRegistry, IDamageCalculator damageCalculator, IVFxFactory vfxFactory)
@@ -74,13 +73,13 @@ namespace Scenes.App.Scripts.Gameplay.Battle
       {
         _lastAttacked = UnitGroup.Enemy;
         ProcessAttack(attacker: _unitRegistry.Enemy, defender: _unitRegistry.Player);
-        _turnNumber+=0.5f;
+        IncreaseTurnByAttack();
       }
       else if (_lastAttacked == UnitGroup.Enemy)
       {
         _lastAttacked = UnitGroup.Player;
         ProcessAttack(attacker: _unitRegistry.Player, defender: _unitRegistry.Enemy);
-        _turnNumber+=0.5f;
+        IncreaseTurnByAttack();
       }
 
       if (BattleOver())
@@ -89,7 +88,7 @@ namespace Scenes.App.Scripts.Gameplay.Battle
         IsBattleWin = BattleWon();
       }
     }
-    
+
     private void ChooseFirstAttacker()
     {
       if(_unitRegistry.Player.Stats.GetStat(StatType.Agility) >= _unitRegistry.Enemy.Stats.GetStat(StatType.Agility))
@@ -102,13 +101,16 @@ namespace Scenes.App.Scripts.Gameplay.Battle
     {
       if (_damageCalculator.HitProbabilityOccurs(attacker, defender))
       { 
-        int damage = _damageCalculator.CalculateDamage(attacker, defender,(int)Mathf.Floor(_turnNumber));
+        int damage = _damageCalculator.CalculateDamage(attacker, defender, TurnNumber());
         attacker.Attack(defender, damage);
       }
       else
         attacker.MissAttack(defender);
     }
     
+    private int TurnNumber() => (int)Mathf.Floor(_turnNumber);
+    private void IncreaseTurnByAttack() => _turnNumber += 0.5f;
+
     public bool BattleOver() => BattleLoosed() || BattleWon();
     private bool BattleLoosed() => _unitRegistry.Player.Health.IsDead;
     private bool BattleWon() => _unitRegistry.Enemy.Health.IsDead;

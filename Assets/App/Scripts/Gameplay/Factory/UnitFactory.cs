@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using App.Scripts.Gameplay.Effects;
-using App.Scripts.Gameplay.Stats;
+﻿using App.Scripts.Gameplay.Stats;
 using App.Scripts.Gameplay.Weapons._Config;
 using App.Scripts.Infrastructure.VFX;
 using Scenes.App.Scripts.Gameplay.UnitRegistryImpl;
@@ -32,7 +30,7 @@ namespace Scenes.App.Scripts.Gameplay.Factory
     {
       PlayerData playerData = _unitsConfig.Players[playerType];
 
-      var player = new Player(playerType, _statsFactory.GetPlayerBaseStats(playerType));
+      var player = new Player(playerType, _statsFactory.GetPlayerBaseStats(playerType), _statsFactory.PlayerMaxLevel);
       SetupBaseUnit(player, at, lookTo, playerData.Prefab);
 
       UpdatePlayerLevel(playerType, player);
